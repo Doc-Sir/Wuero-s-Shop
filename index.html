@@ -2,138 +2,242 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Wuero's Market</title>
-    <style type="text/css">
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f1f1f1;
-        }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
-
-        .items {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-gap: 20px;
-        }
-
-        .item {
-            background-color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-
-        .item img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-
-        .item h3 {
-            margin: 0;
-        }
-
-        .quantity {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        .slide-animation {
-            animation: slide 0.5s;
-        }
-
-        @keyframes slide {
-            from {
-                transform: translateX(100%);
-            }
-
-            to {
-                transform: translateX(0);
-            }
-        }
-
-        .password-input {
-            margin-top: 20px;
-        }
-
-        .password-submit {
-            margin-top: 10px;
-        }
-
-        .quantity-input {
-            margin-top: 20px;
-        }
-
-        .quantity-submit {
-            margin-top: 10px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Wuero's Market</title>
+  <style type="text/css">
+    /* Stylesheet code here */
+  </style>
 </head>
 
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Wuero's Market</h1>
-            <p>DM Wuero on Discord to inquire about purchases.</p>
-        </div>
-        <div class="items">
-            <div class="item">
-                <img src="images/skin_walker_bone.webp" alt="Skin-walker Bone">
-                <h3>Skin-walker Bone</h3>
-                <div class="quantity" id="skinWalkerBone">Quantity: 3</div>
-            </div>
-            <div class="item">
-                <img src="images/skin_walker_jaw.webp" alt="Skin-walker Jaw">
-                <h3>Skin-walker Jaw</h3>
-                <div class="quantity" id="skinWalkerJaw">Quantity: 2</div>
-            </div>
-            <div class="item">
-                <img src="images/windigo_ribs.webp" alt="Windigo Ribs">
-                <h3>Windigo Ribs</h3>
-                <div class="quantity" id="windigoRibs">Quantity: 3</div>
-            </div>
-            <div class="item">
-                <img src="images/trumpet.webp" alt="Trumpet">
-                <h3>Trumpet</h3>
-                <div class="quantity" id="trumpet">Quantity: 1</div>
-            </div>
-            <div class="item">
-                <img src="images/occult_sawed.webp" alt="Occult Sawed-off">
-                <h3>Occult Sawed-off</h3>
-                <div class="quantity" id="occultSawedOff">Quantity: 1</div>
-            </div>
-            <div class="item">
-                <img src="images/skinwalker_spear.webp" alt="Skin-walker Spear">
-                <h3>Skin-walker Spear</h3>
-                <div class="quantity" id="SkinwalkerSpear">Quantity: 1</div>
-        </div>
-        <div class="quantity-input">
-            <input type="number" id="quantity" placeholder="Enter new quantity">
-        </div>
-        <div class="quantity-submit">
-            <button onclick="changeQuantity()">Submit</button>
-        </div>
+  <div class="container">
+    <div class="header">
+      <h1>Wuero's Market</h1>
+      <p>DM Wuero on Discord to inquire about purchases.</p>
     </div>
-    <button onclick="showGUI()">Activate GUI</button>
-    <script src="script.js"></script>
+    <div class="items">
+      <div class="item">
+        <img src="images/skin_walker_bone.webp" alt="Skin-walker Bone">
+        <h3>Skin-walker Bone</h3>
+        <div class="quantity" id="skinWalkerBone">Quantity: 3</div>
+      </div>
+      <div class="item">
+        <img src="images/skin_walker_jaw.webp" alt="Skin-walker Jaw">
+        <h3>Skin-walker Jaw</h3>
+        <div class="quantity" id="skinWalkerJaw">Quantity: 2</div>
+      </div>
+      <div class="item">
+        <img src="images/windigo_ribs.webp" alt="Windigo Ribs">
+        <h3>Windigo Ribs</h3>
+        <div class="quantity" id="windigoRibs">Quantity: 3</div>
+      </div>
+      <div class="item">
+        <img src="images/trumpet.webp" alt="Trumpet">
+        <h3>Trumpet</h3>
+        <div class="quantity" id="trumpet">Quantity: 1</div>
+      </div>
+      <div class="item">
+        <img src="images/occult_sawed.webp" alt="Occult Sawed-off">
+        <h3>Occult Sawed-off</h3>
+        <div class="quantity" id="occultSawedOff">Quantity: 1</div>
+      </div>
+      <div class="item">
+        <img src="images/skinwalker_spear.webp" alt="Skin-walker Spear">
+        <h3>Skin-walker Spear</h3>
+        <div class="quantity" id="SkinwalkerSpear">Quantity: 1</div>
+      </div>
+    </div>
+    <div class="password-input">
+      <input type="password" id="password" placeholder="Enter password">
+    </div>
+    <div class="password-submit">
+      <button onclick="authenticate()">Authenticate</button>
+    </div>
+    <div class="quantity-input">
+      <input type="number" id="quantity" placeholder="Enter new quantity">
+    </div>
+    <div class="quantity-submit">
+      <button onclick="changeQuantity()">Submit</button>
+    </div>
+  </div>
+  <script>
+    const password = "nofishs1234";
+    let authenticated = false;
+
+    function authenticate() {
+      const passwordInput = document.getElementById("password");
+      const quantityInput = document.getElementById("quantity");
+      const passwordValue = passwordInput.value.trim();
+
+      if (passwordValue === password) {
+        authenticated = true;
+        alert("Authentication successful!");
+        passwordInput.value = "";
+        quantityInput.value = "";
+        passwordInput.disabled = true;
+        quantityInput.disabled = false;
+
+        const items = document.querySelectorAll(".item");
+        const passwordInputContainer = document.querySelector(".password-input");
+        const passwordSubmitButton = document.querySelector(".password-submit");
+
+        items.forEach((item) => {
+          item.style.display = "none";
+        });
+
+        passwordInputContainer.style.display = "block";
+        passwordSubmitButton.style.display = "block";
+      } else {
+        alert("Incorrect password");
+        passwordInput.value = "";
+        quantityInput.value = "";
+      }
+    }
+
+    function changeQuantity() {
+      if (authenticated) {
+        const quantityInput = document.getElementById("quantity");
+        const quantityValue = parseInt(quantityInput.value.trim());
+        const items = document.querySelectorAll(".item");
+
+        items.forEach((item) => {
+          const quantityElement = item.querySelector(".quantity");
+          const id = quantityElement.id;
+          const quantity = quantityValue || 0;
+
+          quantityElement.textContent = `Quantity: ${quantity}`;
+        });
+
+        alert("Quantity updated successfully!");
+        quantityInput.value = "";
+      } else {
+        alert("Please authenticate first!");
+      }
+    }
+  </script>
+</body>
+
+</html><!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Wuero's Market</title>
+  <style type="text/css">
+    /* Stylesheet code here */
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Wuero's Market</h1>
+      <p>DM Wuero on Discord to inquire about purchases.</p>
+    </div>
+    <div class="items">
+      <div class="item">
+        <img src="images/skin_walker_bone.webp" alt="Skin-walker Bone">
+        <h3>Skin-walker Bone</h3>
+        <div class="quantity" id="skinWalkerBone">Quantity: 3</div>
+      </div>
+      <div class="item">
+        <img src="images/skin_walker_jaw.webp" alt="Skin-walker Jaw">
+        <h3>Skin-walker Jaw</h3>
+        <div class="quantity" id="skinWalkerJaw">Quantity: 2</div>
+      </div>
+      <div class="item">
+        <img src="images/windigo_ribs.webp" alt="Windigo Ribs">
+        <h3>Windigo Ribs</h3>
+        <div class="quantity" id="windigoRibs">Quantity: 3</div>
+      </div>
+      <div class="item">
+        <img src="images/trumpet.webp" alt="Trumpet">
+        <h3>Trumpet</h3>
+        <div class="quantity" id="trumpet">Quantity: 1</div>
+      </div>
+      <div class="item">
+        <img src="images/occult_sawed.webp" alt="Occult Sawed-off">
+        <h3>Occult Sawed-off</h3>
+        <div class="quantity" id="occultSawedOff">Quantity: 1</div>
+      </div>
+      <div class="item">
+        <img src="images/skinwalker_spear.webp" alt="Skin-walker Spear">
+        <h3>Skin-walker Spear</h3>
+        <div class="quantity" id="SkinwalkerSpear">Quantity: 1</div>
+      </div>
+    </div>
+    <div class="password-input">
+      <input type="password" id="password" placeholder="Enter password">
+    </div>
+    <div class="password-submit">
+      <button onclick="authenticate()">Authenticate</button>
+    </div>
+    <div class="quantity-input">
+      <input type="number" id="quantity" placeholder="Enter new quantity">
+    </div>
+    <div class="quantity-submit">
+      <button onclick="changeQuantity()">Submit</button>
+    </div>
+  </div>
+  <script>
+    const password = "nofishs1234";
+    let authenticated = false;
+
+    function authenticate() {
+      const passwordInput = document.getElementById("password");
+      const quantityInput = document.getElementById("quantity");
+      const passwordValue = passwordInput.value.trim();
+
+      if (passwordValue === password) {
+        authenticated = true;
+        alert("Authentication successful!");
+        passwordInput.value = "";
+        quantityInput.value = "";
+        passwordInput.disabled = true;
+        quantityInput.disabled = false;
+
+        const items = document.querySelectorAll(".item");
+        const passwordInputContainer = document.querySelector(".password-input");
+        const passwordSubmitButton = document.querySelector(".password-submit");
+
+        items.forEach((item) => {
+          item.style.display = "none";
+        });
+
+        passwordInputContainer.style.display = "block";
+        passwordSubmitButton.style.display = "block";
+      } else {
+        alert("Incorrect password");
+        passwordInput.value = "";
+        quantityInput.value = "";
+      }
+    }
+
+    function changeQuantity() {
+      if (authenticated) {
+        const quantityInput = document.getElementById("quantity");
+        const quantityValue = parseInt(quantityInput.value.trim());
+        const items = document.querySelectorAll(".item");
+
+        items.forEach((item) => {
+          const quantityElement = item.querySelector(".quantity");
+          const id = quantityElement.id;
+          const quantity = quantityValue || 0;
+
+          quantityElement.textContent = `Quantity: ${quantity}`;
+        });
+
+        alert("Quantity updated successfully!");
+        quantityInput.value = "";
+      } else {
+        alert("Please authenticate first!");
+      }
+    }
+  </script>
 </body>
 
 </html>

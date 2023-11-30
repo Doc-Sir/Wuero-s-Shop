@@ -6,7 +6,135 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wuero's Market</title>
   <style type="text/css">
-    /* CSS styles omitted for brevity */
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.item h3 {
+  margin: 0;
+}
+
+.quantity {
+  margin-top: 10px;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.slide-animation {
+  animation: slide 0.5s;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f1f1f1;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.items {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 20px;
+}
+
+.item {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.item img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.item h3 {
+  margin: 0;
+}
+
+.quantity {
+  margin-top: 10px;
+}
+
+.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+
+.slide-animation {
+  animation: slide 0.5s;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
   </style>
 </head>
 

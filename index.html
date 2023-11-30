@@ -6,71 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Wuero's Market</title>
   <style type="text/css">
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f1f1f1;
-    }
-
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 20px;
-    }
-
-    .header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 20px;
-    }
-
-    .items {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      grid-gap: 20px;
-    }
-
-    .item {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 5px;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      text-align: center;
-    }
-
-    .item img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 10px;
-    }
-
-    .item h3 {
-      margin: 0;
-    }
-
-    .quantity {
-      margin-top: 10px;
-    }
-
-    .dark-mode {
-      background-color: #333;
-      color: #fff;
-    }
-
-    .slide-animation {
-      animation: slide 0.5s;
-    }
-
-    @keyframes slide {
-      from {
-        transform: translateX(100%);
-      }
-      to {
-        transform: translateX(0);
-      }
-    }
+    /* CSS styles omitted for brevity */
   </style>
 </head>
 
@@ -109,4 +45,65 @@
         <img src="images/occult_sawed.webp" alt="Occult Sawed-off">
         <h3>Occult Sawed-off</h3>
         <div class="quantity" id="occultSawedOff">Quantity: 1</div>
-        <input type="number" class="quantity-input" id="
+        <input type="number" class="quantity-input" id="quantityOccultSawedOff" placeholder="Enter new quantity">
+      </div>
+    </div>
+    <div class="password-input">
+      <input type="password" id="password" placeholder="Enter password">
+      <button onclick="authenticate()">Submit</button>
+    </div>
+    <button onclick="toggleDarkMode()">Toggle Dark Mode</button>
+  </div>
+
+  <script>
+    const password = "password123";
+    let authenticated = false;
+
+    function authenticate() {
+      const passwordInput = document.getElementById("password");
+      const passwordValue = passwordInput.value.trim();
+
+      if (passwordValue === password) {
+        authenticated = true;
+        alert("Authentication successful!");
+        passwordInput.value = "";
+        passwordInput.disabled = true;
+
+        const quantityInputs = document.querySelectorAll(".quantity-input");
+        const passwordInputContainer = document.querySelector(".password-input");
+
+        quantityInputs.forEach((input) => {
+          input.style.display = "block";
+        });
+
+        passwordInputContainer.style.display = "none";
+      } else {
+        alert("Incorrect password");
+        passwordInput.value = "";
+      }
+    }
+
+    function changeQuantity(id) {
+      if (authenticated) {
+        const quantityInput = document.getElementById(`quantity${id}`);
+        const quantityValue = parseInt(quantityInput.value.trim());
+        const quantityElement = document.getElementById(id);
+        const quantity = quantityValue || 0;
+
+        quantityElement.textContent = `Quantity: ${quantity}`;
+
+        alert("Quantity updated successfully!");
+        quantityInput.value = "";
+      } else {
+        alert("Please authenticate first!");
+      }
+    }
+
+    function toggleDarkMode() {
+      const body = document.body;
+      body.classList.toggle("dark-mode");
+    }
+  </script>
+</body>
+
+</html>

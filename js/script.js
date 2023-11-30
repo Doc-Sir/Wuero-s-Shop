@@ -1,49 +1,35 @@
-const password = "nofishs1234";
-let authenticated = false;
-
 function authenticate() {
   const passwordInput = document.getElementById("password");
-  const quantityInput = document.getElementById("quantity");
   const passwordValue = passwordInput.value.trim();
 
   if (passwordValue === password) {
     authenticated = true;
     alert("Authentication successful!");
     passwordInput.value = "";
-    quantityInput.value = "";
     passwordInput.disabled = true;
-    quantityInput.disabled = false;
 
-    const items = document.querySelectorAll(".item");
+    const quantityInputs = document.querySelectorAll(".quantity-input");
     const passwordInputContainer = document.querySelector(".password-input");
-    const passwordSubmitButton = document.querySelector(".password-submit");
 
-    items.forEach(item => {
-      item.style.display = "none";
+    quantityInputs.forEach((input) => {
+      input.style.display = "block";
     });
 
-    passwordInputContainer.style.display = "block";
-    passwordSubmitButton.style.display = "block";
+    passwordInputContainer.style.display = "none";
   } else {
     alert("Incorrect password");
     passwordInput.value = "";
-    quantityInput.value = "";
   }
 }
 
-function changeQuantity() {
+function changeQuantity(id) {
   if (authenticated) {
-    const quantityInput = document.getElementById("quantity");
+    const quantityInput = document.getElementById(`quantity${id}`);
     const quantityValue = parseInt(quantityInput.value.trim());
-    const items = document.querySelectorAll(".item");
+    const quantityElement = document.getElementById(id);
+    const quantity = quantityValue || 0;
 
-    items.forEach(item => {
-      const quantityElement = item.querySelector(".quantity");
-      const id = quantityElement.id;
-      const quantity = quantityValue || 0;
-
-      quantityElement.textContent = `Quantity: ${quantity}`;
-    });
+    quantityElement.textContent = `Quantity: ${quantity}`;
 
     alert("Quantity updated successfully!");
     quantityInput.value = "";
